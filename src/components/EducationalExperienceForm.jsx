@@ -1,25 +1,40 @@
-export default function EducationalExperienceForm() {
+export default function EducationalExperienceForm({ educationalExperience, setEducationalExperience }) {
+
+  function handleChange(e) {
+    const { name, type, value, checked } = e.target;
+    setEducationalExperience({
+      ...educationalExperience,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  }
+
   return (
     <>
       <h2>Educational experience</h2>
       <form action="">
         <div>
           <label htmlFor="schoolName" >Name of school</label>
-          <input type="text" id="schoolName" required></input>
+          <input name="schoolName" value={educationalExperience.schoolName} onChange={handleChange} type="text" id="schoolName" required></input>
         </div>
         <div>
-          <label htmlFor="studyName" >Title of study</label>
-          <input type="text" id="studyName" required></input>
+          <label htmlFor="studyTitle" >Title of study</label>
+          <input name="studyTitle" value={educationalExperience.studyTitle} onChange={handleChange} type="text" id="studyTitle" required></input>
         </div>
         <div>
           <label htmlFor="beginYear" >Begin year</label>
-          <input type="number" id="beginYear" required></input>
+          <input name="beginYear" value={educationalExperience.beginYear} onChange={handleChange} type="number" id="beginYear" required></input>
         </div>
         <div>
           <label htmlFor="graduationYear">Graduation year</label>
-          <input type="number" id="graduationYear"></input>
+          <input name="graduationYear" value={educationalExperience.graduationYear} onChange={handleChange} type="number" id="graduationYear"></input>
           <div>
-            <input type="checkbox" id="isInProgress" />
+            <input
+              type="checkbox"
+              id="isInProgress"
+              name="isInProgress"
+              checked={educationalExperience.isInProgress}
+              onChange={handleChange}
+            />
             <label htmlFor="isInProgress">In progress</label>
           </div>
         </div>
