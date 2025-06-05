@@ -8,6 +8,15 @@ export default function EducationalExperienceForm({ educationalExperience, setEd
     });
   }
 
+  function handleCheckboxChange(e) {
+    const checked = e.target.checked;
+    setEducationalExperience({
+      ...educationalExperience,
+      isInProgress: checked,
+      graduationYear: checked ? "" : educationalExperience.graduationYear,
+    });
+  }
+
   return (
     <>
       <h2>Educational experience</h2>
@@ -26,14 +35,14 @@ export default function EducationalExperienceForm({ educationalExperience, setEd
         </div>
         <div>
           <label htmlFor="graduationYear">Graduation year</label>
-          <input name="graduationYear" value={educationalExperience.graduationYear} onChange={handleChange} type="number" id="graduationYear"></input>
+          <input name="graduationYear" value={educationalExperience.graduationYear} onChange={handleChange} type="number" id="graduationYear" disabled={educationalExperience.isInProgress}></input>
           <div>
             <input
               type="checkbox"
               id="isInProgress"
               name="isInProgress"
               checked={educationalExperience.isInProgress}
-              onChange={handleChange}
+              onChange={handleCheckboxChange}
             />
             <label htmlFor="isInProgress">In progress</label>
           </div>

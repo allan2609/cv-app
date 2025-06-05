@@ -5,7 +5,10 @@ export default function ProfessionalExperienceDisplay({ professionalExperience }
       <p>Employer: {professionalExperience.employer}</p>
       <p>Position: {professionalExperience.position}</p>
       <p>Begin year: {professionalExperience.beginYear}</p>
-      <p>End year: {professionalExperience.endYear}</p>
+      <p>{professionalExperience.isCurrentlyEmployed
+        ? <p>Currently employed</p>
+        : <p>Left in {professionalExperience.endYear}</p>}
+      </p>
     </>
   );
 }

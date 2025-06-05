@@ -8,6 +8,15 @@ export default function ProfessionalExperienceForm({ professionalExperience, set
     });
   }
 
+  function handleCheckboxChange(e) {
+    const checked = e.target.checked;
+    setProfessionalExperience({
+      ...professionalExperience,
+      isCurrentlyEmployed: checked,
+      endYear: checked ? "" : professionalExperience.endYear,
+    });
+  }
+
   return (
     <>
       <h2>Professional experience</h2>
@@ -26,14 +35,14 @@ export default function ProfessionalExperienceForm({ professionalExperience, set
         </div>
         <div>
           <label htmlFor="endYear">End year</label>
-          <input name="endYear" value={professionalExperience.endYear} onChange={handleChange} type="number" id="endYear"></input>
+          <input name="endYear" value={professionalExperience.endYear} onChange={handleChange} type="number" id="endYear" disabled={professionalExperience.isCurrentlyEmployed}></input>
           <div>
           <input
               type="checkbox"
               id="isCurrentlyEmployed"
               name="isCurrentlyEmployed"
               checked={professionalExperience.isCurrentlyEmployed}
-              onChange={handleChange}
+              onChange={handleCheckboxChange}
             />
             <label htmlFor="isCurrentlyEmployed">Currently employed</label>
           </div>
