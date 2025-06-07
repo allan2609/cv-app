@@ -21,26 +21,40 @@ function App() {
     studyTitle: "",
     beginYear: "",
     graduationYear: "",
-    isInProgress: ""
+    isInProgress: false
   })
+
+  const [educationList, setEducationList] = useState([]);
 
   const [professionalExperience, setProfessionalExperience] = useState({
     employer: "",
     position: "",
     beginYear: "",
     endYear: "",
-    isCurrentlyEmployed: ""
+    isCurrentlyEmployed: false
   })
+
+  const [workList, setWorkList] = useState([]);
 
   return (
     <>
       <div>
         <GeneralInfoForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
         <GeneralInfoDisplay generalInfo={generalInfo} />
-        <EducationalExperienceForm educationalExperience={educationalExperience} setEducationalExperience={setEducationalExperience} />
-        <EducationalExperienceDisplay educationalExperience={educationalExperience} />
-        <ProfessionalExperienceForm professionalExperience={professionalExperience} setProfessionalExperience={setProfessionalExperience} />
-        <ProfessionalExperienceDisplay professionalExperience={professionalExperience} />
+
+        <EducationalExperienceForm
+          educationalExperience={educationalExperience}
+          setEducationalExperience={setEducationalExperience}
+          setEducationList={setEducationList}
+        />
+        <EducationalExperienceDisplay educationList={educationList} />
+
+        <ProfessionalExperienceForm
+          professionalExperience={professionalExperience}
+          setProfessionalExperience={setProfessionalExperience}
+          setWorkList={setWorkList}
+        />
+        <ProfessionalExperienceDisplay workList={workList} />
       </div>
     </>
   )

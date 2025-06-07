@@ -1,4 +1,4 @@
-export default function ProfessionalExperienceForm({ professionalExperience, setProfessionalExperience }) {
+export default function ProfessionalExperienceForm({ professionalExperience, setProfessionalExperience, setWorkList }) {
 
   function handleChange(e) {
     const { name, type, value, checked } = e.target;
@@ -17,10 +17,22 @@ export default function ProfessionalExperienceForm({ professionalExperience, set
     });
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setWorkList(prev => [...prev, professionalExperience]);
+    setProfessionalExperience({
+      employer: "",
+      position: "",
+      beginYear: "",
+      endYear: "",
+      isCurrentlyEmployed: false
+    });
+  }
+
   return (
     <>
       <h2>Professional experience</h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="employer" >Employer</label>
           <input name="employer" value={professionalExperience.employer} onChange={handleChange} type="text" id="employer" required></input>

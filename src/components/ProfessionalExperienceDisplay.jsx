@@ -1,14 +1,17 @@
-export default function ProfessionalExperienceDisplay({ professionalExperience }) {
+export default function ProfessionalExperienceDisplay({ workList }) {
   return (
     <>
       <h2>Professional experience</h2>
-      <p>Employer: {professionalExperience.employer}</p>
-      <p>Position: {professionalExperience.position}</p>
-      <p>Begin year: {professionalExperience.beginYear}</p>
-      <p>{professionalExperience.isCurrentlyEmployed
-        ? <p>Currently employed</p>
-        : <p>Left in {professionalExperience.endYear}</p>}
-      </p>
+      {workList.map((job, index) => (
+        <div key={index}>
+          <p>Employer: {job.employer}</p>
+          <p>Position: {job.position}</p>
+          <p>Begin year: {job.beginYear}</p>
+          {job.isCurrentlyEmployed
+            ? <p>Currently employed</p>
+            : <p>Left in {job.endYear}</p>}
+        </div>
+      ))}
     </>
   );
 }

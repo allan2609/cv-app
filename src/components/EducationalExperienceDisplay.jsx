@@ -1,14 +1,17 @@
-export default function EducationalExperienceDisplay({ educationalExperience }) {
+export default function EducationalExperienceDisplay({ educationList }) {
   return (
     <>
       <h2>Educational experience</h2>
-      <p>School: {educationalExperience.schoolName}</p>
-      <p>Title of study: {educationalExperience.studyTitle}</p>
-      <p>Begin year: {educationalExperience.beginYear}</p>
-      <p>{educationalExperience.isInProgress
-        ? <p>Currently studying</p>
-        : <p>Graduated in {educationalExperience.graduationYear}</p>}
-      </p>
+      {educationList.map((entry, index) => (
+        <div key={index}>
+          <p>School: {entry.schoolName}</p>
+          <p>Title of study: {entry.studyTitle}</p>
+          <p>Begin year: {entry.beginYear}</p>
+          {entry.isInProgress
+            ? <p>Currently studying</p>
+            : <p>Graduated in {entry.graduationYear}</p>}
+        </div>
+      ))}
     </>
   );
 }

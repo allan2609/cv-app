@@ -1,4 +1,4 @@
-export default function EducationalExperienceForm({ educationalExperience, setEducationalExperience }) {
+export default function EducationalExperienceForm({ educationalExperience, setEducationalExperience, setEducationList }) {
 
   function handleChange(e) {
     const { name, type, value, checked } = e.target;
@@ -17,10 +17,22 @@ export default function EducationalExperienceForm({ educationalExperience, setEd
     });
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    setEducationList(prev => [...prev, educationalExperience]);
+    setEducationalExperience({
+      schoolName: "",
+      studyTitle: "",
+      beginYear: "",
+      graduationYear: "",
+      isInProgress: false
+    });
+  }  
+
   return (
     <>
       <h2>Educational experience</h2>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="schoolName" >Name of school</label>
           <input name="schoolName" value={educationalExperience.schoolName} onChange={handleChange} type="text" id="schoolName" required></input>
