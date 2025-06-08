@@ -28,6 +28,10 @@ export default function GeneralInfoForm({ generalInfo, setGeneralInfo }) {
           <label htmlFor="phone">Phone number</label>
           <input name="phone" value={generalInfo.phone} onChange={handleChange} type="tel" id="phone"></input>
         </div>
+        <div>
+          <label htmlFor="website" >Website</label>
+          <input name="website" value={generalInfo.website} onChange={handleChange} type="text" id="website"></input>
+        </div>
       </form>
     </>
   )

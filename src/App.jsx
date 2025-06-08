@@ -13,7 +13,8 @@ function App() {
     firstName: "",
     lastName: "",
     email: "",
-    phone: ""
+    phone: "",
+    website: ""
   });
 
   const [educationalExperience, setEducationalExperience] = useState({
