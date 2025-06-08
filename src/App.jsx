@@ -10,6 +10,7 @@ import "./App.css"
 function App() {
 
   const [generalInfo, setGeneralInfo] = useState({
+    aboutMe: "",
     firstName: "",
     lastName: "",
     email: "",

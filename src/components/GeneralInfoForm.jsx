@@ -12,6 +12,10 @@ export default function GeneralInfoForm({ generalInfo, setGeneralInfo }) {
     <>
       <h2>General information</h2>
       <form action="">
+      <div>
+          <label htmlFor="aboutMe" >About me</label>
+          <input name="aboutMe" value={generalInfo.aboutMe} onChange={handleChange} type="text" id="aboutMe"></input>
+        </div>
         <div>
           <label htmlFor="firstName" >First Name</label>
           <input name="firstName" value={generalInfo.firstName} onChange={handleChange} type="text" id="firstName" required></input>
