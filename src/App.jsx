@@ -5,6 +5,8 @@ import ProfessionalExperienceForm from "./components/ProfessionalExperienceForm"
 import GeneralInfoDisplay from "./components/GeneralInfoDisplay"
 import EducationalExperienceDisplay from "./components/EducationalExperienceDisplay"
 import ProfessionalExperienceDisplay from "./components/ProfessionalExperienceDisplay"
+import SkillsForm from "./components/SkillsForm"
+import SkillsDisplay from "./components/SkillsDisplay"
 import "./App.css"
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
 
   const [workList, setWorkList] = useState([]);
 
+  const [skills, setSkills] = useState([""]);
+
   return (
     <>
       <div>
@@ -57,6 +61,9 @@ function App() {
           setWorkList={setWorkList}
         />
         <ProfessionalExperienceDisplay workList={workList} />
+
+        <SkillsForm skills={skills} setSkills={setSkills} />
+        <SkillsDisplay skills={skills} />
       </div>
     </>
   )
