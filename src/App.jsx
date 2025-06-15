@@ -40,7 +40,7 @@ function App() {
 
   const [workList, setWorkList] = useState([]);
 
-  const [skills, setSkills] = useState([""]);
+  const [skillList, setSkillList] = useState([]);
 
   return (
     <>
@@ -62,8 +62,8 @@ function App() {
         />
         <ProfessionalExperienceDisplay workList={workList} />
 
-        <SkillsForm skills={skills} setSkills={setSkills} />
-        <SkillsDisplay skills={skills} />
+        <SkillsForm skillList={skillList} setSkillList={setSkillList} />
+        <SkillsDisplay skillList={skillList} />
       </div>
     </>
   )
