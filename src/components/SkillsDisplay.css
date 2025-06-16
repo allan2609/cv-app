@@ -1,0 +1,29 @@
+.skills-display-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skills-display-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.skills-display-section ul {
+  color: #333;
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.skills-display-section li {
+  margin-bottom: 0.5rem;
+}
+
+.skills-display-section p {
+  color: #333;
+}
