@@ -52,3 +52,13 @@
 .add-skill-btn:hover {
   background-color: #2980b9;
 }
+
+@media (max-width: 600px) {
+  .skills-display-section {
+    padding: 0.75rem;
+  }
+
+  .skills-display-section h2 {
+    font-size: 1.25rem;
+  }
+}
