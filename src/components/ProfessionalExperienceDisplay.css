@@ -1,0 +1,33 @@
+.work-display-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.work-display-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.work-entry {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.work-entry:last-child {
+  border-bottom: none;
+}
+
+.work-entry p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.work-entry .label {
+  font-weight: 600;
+  color: #555;
+}
