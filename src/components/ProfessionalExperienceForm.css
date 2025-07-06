@@ -1,0 +1,52 @@
+.work-form-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.work-form-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.work-form-section label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.work-form-section input[type="text"],
+.work-form-section input[type="number"] {
+  width: 100%;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+  margin-left: 0.5rem;
+}
+
+.work-form-section button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.work-form-section button:hover {
+  background-color: #555;
+}
