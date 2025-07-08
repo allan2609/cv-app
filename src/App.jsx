@@ -1,16 +1,16 @@
-import { useState } from "react"
-import GeneralInfoForm from "./components/GeneralInfoForm"
-import EducationalExperienceForm from "./components/EducationalExperienceForm"
-import ProfessionalExperienceForm from "./components/ProfessionalExperienceForm"
-import GeneralInfoDisplay from "./components/GeneralInfoDisplay"
-import EducationalExperienceDisplay from "./components/EducationalExperienceDisplay"
-import ProfessionalExperienceDisplay from "./components/ProfessionalExperienceDisplay"
-import SkillsForm from "./components/SkillsForm"
-import SkillsDisplay from "./components/SkillsDisplay"
-import "./App.css"
+import { useState } from "react";
+import GeneralInfoForm from "./components/GeneralInfoForm";
+import EducationalExperienceForm from "./components/EducationalExperienceForm";
+import ProfessionalExperienceForm from "./components/ProfessionalExperienceForm";
+import GeneralInfoDisplay from "./components/GeneralInfoDisplay";
+import EducationalExperienceDisplay from "./components/EducationalExperienceDisplay";
+import ProfessionalExperienceDisplay from "./components/ProfessionalExperienceDisplay";
+import SkillsForm from "./components/SkillsForm";
+import SkillsDisplay from "./components/SkillsDisplay";
+import CollapsibleSection from "./components/CollapsibleSection";
+import "./App.css";
 
 function App() {
-
   const [generalInfo, setGeneralInfo] = useState({
     aboutMe: "",
     firstName: "",
@@ -26,7 +26,7 @@ function App() {
     beginYear: "",
     graduationYear: "",
     isInProgress: false
-  })
+  });
 
   const [educationList, setEducationList] = useState([]);
 
@@ -36,37 +36,48 @@ function App() {
     beginYear: "",
     endYear: "",
     isCurrentlyEmployed: false
-  })
+  });
 
   const [workList, setWorkList] = useState([]);
 
   const [skillList, setSkillList] = useState([]);
 
   return (
-    <>
-      <div>
-        <GeneralInfoForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+    <div className="main-layout">
+      <div className="forms-column">
+        <CollapsibleSection title="General Info">
+          <GeneralInfoForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+        </CollapsibleSection>
+
+        <CollapsibleSection title="Education">
+          <EducationalExperienceForm
+            educationalExperience={educationalExperience}
+            setEducationalExperience={setEducationalExperience}
+            setEducationList={setEducationList}
+          />
+        </CollapsibleSection>
+
+        <CollapsibleSection title="Work">
+          <ProfessionalExperienceForm
+            professionalExperience={professionalExperience}
+            setProfessionalExperience={setProfessionalExperience}
+            setWorkList={setWorkList}
+          />
+        </CollapsibleSection>
+
+        <CollapsibleSection title="Skills">
+          <SkillsForm skillList={skillList} setSkillList={setSkillList} />
+        </CollapsibleSection>
+      </div>
+
+      <div className="display-column">
         <GeneralInfoDisplay generalInfo={generalInfo} />
-
-        <EducationalExperienceForm
-          educationalExperience={educationalExperience}
-          setEducationalExperience={setEducationalExperience}
-          setEducationList={setEducationList}
-        />
         <EducationalExperienceDisplay educationList={educationList} />
-
-        <ProfessionalExperienceForm
-          professionalExperience={professionalExperience}
-          setProfessionalExperience={setProfessionalExperience}
-          setWorkList={setWorkList}
-        />
         <ProfessionalExperienceDisplay workList={workList} />
-
-        <SkillsForm skillList={skillList} setSkillList={setSkillList} />
         <SkillsDisplay skillList={skillList} />
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
