@@ -15,7 +15,14 @@ body {
   min-width: 0;
 }
 
+.display-column {
+  background-color: #f7f7f7;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
 .display-column > h2 {
+  color: black;
   text-align: center;
 }
 
