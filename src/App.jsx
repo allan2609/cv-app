@@ -71,6 +71,7 @@ function App() {
       </div>
 
       <div className="display-column">
+        <h2>Curriculum Vitae</h2>
         <GeneralInfoDisplay generalInfo={generalInfo} />
         <EducationalExperienceDisplay educationList={educationList} />
         <ProfessionalExperienceDisplay workList={workList} />
