@@ -42,6 +42,14 @@ function App() {
 
   const [skillList, setSkillList] = useState([]);
 
+  const removeEducation = (index) => {
+    setEducationList(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const removeWork = (index) => {
+    setWorkList(prev => prev.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="main-layout">
       <div className="forms-column">
@@ -73,8 +81,14 @@ function App() {
       <div className="display-column">
         <h2>Curriculum Vitae</h2>
         <GeneralInfoDisplay generalInfo={generalInfo} />
-        <EducationalExperienceDisplay educationList={educationList} />
-        <ProfessionalExperienceDisplay workList={workList} />
+        <EducationalExperienceDisplay
+          educationList={educationList}
+          onRemove={removeEducation}
+        />
+        <ProfessionalExperienceDisplay
+          workList={workList}
+          onRemove={removeWork}
+        />
         <SkillsDisplay skillList={skillList} />
       </div>
     </div>

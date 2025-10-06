@@ -1,6 +1,6 @@
 import "./ProfessionalExperienceDisplay.css";
 
-export default function ProfessionalExperienceDisplay({ workList }) {
+export default function ProfessionalExperienceDisplay({ workList, onRemove }) {
   return (
     <div className="work-display-section">
       <h2>Professional experience</h2>
@@ -12,6 +12,7 @@ export default function ProfessionalExperienceDisplay({ workList }) {
           {job.isCurrentlyEmployed
             ? <p><span className="label">Status:</span> Currently employed</p>
             : <p><span className="label">Left in:</span> {job.endYear}</p>}
+            <button onClick={() => onRemove(index)}>Remove</button>
         </div>
       ))}
     </div>
