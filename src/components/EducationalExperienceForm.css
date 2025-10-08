@@ -1,5 +1,4 @@
 .education-form-section {
-  margin-top: 2rem;
   padding: 1.5rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -12,6 +11,12 @@
   color: #333;
 }
 
+.education-form-section .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
 .education-form-section label {
   display: block;
   margin-bottom: 0.25rem;
@@ -21,7 +26,6 @@
 
 .education-form-section input[type="text"],
 .education-form-section input[type="number"] {
-  width: 100%;
   padding: 0.4rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;

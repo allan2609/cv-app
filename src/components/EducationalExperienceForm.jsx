@@ -34,19 +34,19 @@ export default function EducationalExperienceForm({ educationalExperience, setEd
   return (
     <form onSubmit={handleSubmit} className="education-form-section">
       <h2>Educational experience</h2>
-      <div>
+      <div className="form-group">
         <label htmlFor="schoolName">Name of school</label>
         <input name="schoolName" value={educationalExperience.schoolName} onChange={handleChange} type="text" id="schoolName" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="studyTitle">Title of study</label>
         <input name="studyTitle" value={educationalExperience.studyTitle} onChange={handleChange} type="text" id="studyTitle" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="beginYear">Begin year</label>
         <input name="beginYear" value={educationalExperience.beginYear} onChange={handleChange} type="number" id="beginYear" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="graduationYear">Graduation year</label>
         <input name="graduationYear" value={educationalExperience.graduationYear} onChange={handleChange} type="number" id="graduationYear" disabled={educationalExperience.isInProgress} />
         <div className="checkbox-group">
