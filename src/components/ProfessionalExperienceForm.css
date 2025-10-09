@@ -11,6 +11,12 @@
   color: #333;
 }
 
+.work-form-section .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
 .work-form-section label {
   display: block;
   margin-bottom: 0.25rem;
@@ -20,7 +26,6 @@
 
 .work-form-section input[type="text"],
 .work-form-section input[type="number"] {
-  width: 100%;
   padding: 0.4rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;

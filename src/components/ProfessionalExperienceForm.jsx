@@ -34,19 +34,19 @@ export default function ProfessionalExperienceForm({ professionalExperience, set
   return (
     <form onSubmit={handleSubmit} className="work-form-section">
       <h2>Professional experience</h2>
-      <div>
+      <div className="form-group">
         <label htmlFor="employer">Employer</label>
         <input name="employer" value={professionalExperience.employer} onChange={handleChange} type="text" id="employer" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="position">Position</label>
         <input name="position" value={professionalExperience.position} onChange={handleChange} type="text" id="position" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="beginYear">Begin year</label>
         <input name="beginYear" value={professionalExperience.beginYear} onChange={handleChange} type="number" id="beginYear" required />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="endYear">End year</label>
         <input name="endYear" value={professionalExperience.endYear} onChange={handleChange} type="number" id="endYear" disabled={professionalExperience.isCurrentlyEmployed} />
         <div className="checkbox-group">
