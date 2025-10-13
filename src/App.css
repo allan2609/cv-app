@@ -1,5 +1,7 @@
 body {
+  display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .main-layout {
@@ -12,7 +14,7 @@ body {
 
 .forms-column, .display-column {
   flex: 1;
-  min-width: 0;
+  min-width: 22rem;
 }
 
 .display-column {
